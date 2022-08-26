@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Viewer View Controller-->
+        <scene sceneID="q1e-fC-6Ra">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewerViewController" id="Uhk-zp-NGj" customClass="PhotoViewerViewController" customModule="PhotoViewer" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KCr-go-6F4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E19-oG-rkR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wms-VV-R4Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="818" id="6tF-x2-tLU"/>
+                                            <constraint firstAttribute="width" constant="414" id="xg5-zB-ksG"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wms-VV-R4Y" firstAttribute="leading" secondItem="E19-oG-rkR" secondAttribute="leading" id="4Ha-ZL-AKH"/>
+                                    <constraint firstItem="wms-VV-R4Y" firstAttribute="top" secondItem="E19-oG-rkR" secondAttribute="top" id="VYu-lc-NZu"/>
+                                    <constraint firstAttribute="trailing" secondItem="wms-VV-R4Y" secondAttribute="trailing" id="di6-M3-DCh"/>
+                                    <constraint firstAttribute="bottom" secondItem="wms-VV-R4Y" secondAttribute="bottom" id="wkx-5u-50W"/>
+                                </constraints>
+                            </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="TSw-Fb-8Vt">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fZJ-3m-ERp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E19-oG-rkR" firstAttribute="top" secondItem="fZJ-3m-ERp" secondAttribute="top" id="14e-Cd-hyt"/>
+                            <constraint firstItem="E19-oG-rkR" firstAttribute="leading" secondItem="fZJ-3m-ERp" secondAttribute="leading" id="4Eh-ew-GJb"/>
+                            <constraint firstItem="TSw-Fb-8Vt" firstAttribute="centerY" secondItem="KCr-go-6F4" secondAttribute="centerY" id="S8e-fy-qCf"/>
+                            <constraint firstItem="fZJ-3m-ERp" firstAttribute="trailing" secondItem="E19-oG-rkR" secondAttribute="trailing" id="Unc-wS-N8g"/>
+                            <constraint firstItem="fZJ-3m-ERp" firstAttribute="bottom" secondItem="E19-oG-rkR" secondAttribute="bottom" id="iqK-pn-KWc"/>
+                            <constraint firstItem="TSw-Fb-8Vt" firstAttribute="centerX" secondItem="KCr-go-6F4" secondAttribute="centerX" id="rpo-2o-lyj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="TSw-Fb-8Vt" id="Nt0-ra-kFa"/>
+                        <outlet property="imageBottomConstraint" destination="wkx-5u-50W" id="RRR-hN-Ag6"/>
+                        <outlet property="imageHeightConstraint" destination="6tF-x2-tLU" id="Nz7-yi-g1c"/>
+                        <outlet property="imageLeadingConstraint" destination="4Ha-ZL-AKH" id="Cu2-fM-CQS"/>
+                        <outlet property="imageTopConstraint" destination="VYu-lc-NZu" id="EeF-a4-pLG"/>
+                        <outlet property="imageTrailingConstraint" destination="di6-M3-DCh" id="KZs-bk-qiu"/>
+                        <outlet property="imageView" destination="wms-VV-R4Y" id="VRb-2T-ubr"/>
+                        <outlet property="imageWidthConstraint" destination="xg5-zB-ksG" id="Xel-3T-Ilp"/>
+                        <outlet property="scrollView" destination="E19-oG-rkR" id="2Kc-fH-jrl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVB-SF-PGG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="23"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
