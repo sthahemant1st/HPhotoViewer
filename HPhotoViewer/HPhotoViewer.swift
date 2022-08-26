@@ -26,6 +26,11 @@ public class HPhotoViewer {
         presenter.present(vc, animated: true)
     }
     
+    /// Show photoViewer view form a navigation controller
+    /// - Parameters:
+    ///   - photoUrl: URL of the photo you want to preview
+    ///   - errorImage: FallBack image if given failed to open photoUrl
+    ///   - navigationController: navigation controller to show photoViewer
     public func show(for photoUrl: URL, errorImage: UIImage?, navigationController: UINavigationController) {
         let storyBoard = UIStoryboard(name: "HPhotoViewer", bundle: Bundle.module)
         let vc = storyBoard.instantiateViewController(withIdentifier: PhotoViewerViewController.identifier)
